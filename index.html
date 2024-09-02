@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <meta name="description" content="Delicioso is een Italiaans restaurant.">
+    <meta name="keywords" content="Restaurant, Delicioso">
+    <meta name="author" content="Sepideh Teimoory Garakani">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="CSS/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>Restaurant Delicioso</title>
+</head>
+<body>
+    <header>
+        <h1>Restaurant Delicioso</h1>
+        <p>De beste plek voor heerlijke gerechten!</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li>
+                <a href="#">Menu</a>
+                <ul>
+                    <li><a href="#">Voorgerechten</a></li>
+                    <li><a href="#">Hoofdgerechten</a></li>
+                    <li><a href="#">Nagerechten</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Reserveren</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="content">
+        <h2>Onze Specialiteiten</h2>
+        <p>Klik op een afbeelding om deze groter te bekijken.</p>
+        <img src="Afbeeldingen/3.jpg" alt="Gerecht 1" width="300" height="300">
+        <img src="Afbeeldingen/4.jpg" alt="Gerecht 2"width="300" height="300">
+        <img src="Afbeeldingen/2.jpg" alt="Gerecht 3" width="300" height="300">
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Restaurant Delicioso | Alle rechten voorbehouden</p>
+    </footer>
+
+    <script>
+        $(document).ready(function() { 
+            $('nav ul li').hover(
+                function() {
+                    $(this).children('ul').stop(true, true).slideDown(200);
+                },
+                function() {
+                    $(this).children('ul').stop(true, true).slideUp(200);
+                }
+            );
+
+            $('.content img').click(function() {
+                $(this).toggleClass('enlarged');
+            });
+        });
+    </script>
+</body>
+</html>
